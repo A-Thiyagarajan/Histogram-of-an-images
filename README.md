@@ -30,101 +30,102 @@ The Histogram of gray scale image and color image is shown.
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-
+```
+```
 # Load the color image
 image = cv2.imread('cat.jpg')
-
+```
+```
 # Convert the image to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
-
-# Apply histogram equalization
-equalized_image = cv2.equalizeHist(gray_image)
-
-# Plotting the original grayscale image, equalized image, and histograms
-plt.figure(figsize=(10, 7))
-
-# Show original grayscale image
-plt.subplot(2, 2, 1)
+```
+```
 plt.imshow(gray_image, cmap='gray')
 plt.title('Original Grayscale Image')
 plt.axis('off')
-
-# Show equalized grayscale image
-plt.subplot(2, 2, 2)
+```
+![image](https://github.com/user-attachments/assets/a477f062-233e-492d-aee7-34b88ade9d4c)
+```
+# Apply histogram equalization
+equalized_image = cv2.equalizeHist(gray_image)
+```
+```
 plt.imshow(equalized_image, cmap='gray')
 plt.title('Equalized Image')
 plt.axis('off')
-
-# Plot histogram of the original grayscale image
-plt.subplot(2, 2, 3)
+```
+![image](https://github.com/user-attachments/assets/2ef1b38a-d14b-4ad2-98cc-b318dad1208d)
+```
+hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
+```
+```
 plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
 plt.xlim([0, 256])
-
-# Plot histogram of the equalized image
-plt.subplot(2, 2, 4)
+```
+![image](https://github.com/user-attachments/assets/a5d7502b-0b88-4b6c-8d42-25134cff465a)
+```
 hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+```
+```
 plt.plot(hist_equalized, color='black')
 plt.title('Equalized Histogram')
-plt.xlim([0, 256])
-
-plt.tight_layout()
 plt.show()
 ```
+![image](https://github.com/user-attachments/assets/e5c0e193-141f-4f9d-aa6a-474255b7a650)
 
-![image](https://github.com/user-attachments/assets/38b5b27e-59c3-4834-8b82-fefa4365f393)
-
-
-### Dark Image 
+### Histogram for Daerk Image 
 ```
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
-
+```
+```
 # Load the color image
 image = cv2.imread('dog.jpg')
-
+```
+```
 # Convert the image to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Apply histogram equalization
-equalized_image = cv2.equalizeHist(gray_image)
-
-# Plotting the original grayscale image, equalized image, and histograms
-plt.figure(figsize=(10, 7))
-
-# Show original grayscale image
-plt.subplot(2, 2, 1)
+```
+```
 plt.imshow(gray_image, cmap='gray')
 plt.title('Original Grayscale Image')
 plt.axis('off')
+```
+![image](https://github.com/user-attachments/assets/57c4e74d-bffe-4920-a427-3bcf45fa6f2c)
 
-# Show equalized grayscale image
-plt.subplot(2, 2, 2)
+```
+# Apply histogram equalization
+equalized_image = cv2.equalizeHist(gray_image)
+```
+```
 plt.imshow(equalized_image, cmap='gray')
 plt.title('Equalized Image')
 plt.axis('off')
-
-# Plot histogram of the original grayscale image
-plt.subplot(2, 2, 3)
+```
+![image](https://github.com/user-attachments/assets/d5ce3c3e-0317-465b-a5c3-142640a6c184)
+```
 hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
+```
+```
+
 plt.plot(hist_original, color='black')
 plt.title('Original Histogram')
 plt.xlim([0, 256])
 
-# Plot histogram of the equalized image
-plt.subplot(2, 2, 4)
+```
+![image](https://github.com/user-attachments/assets/a2211579-3614-402b-92a6-bc44b91e88d7)
+
+```
 hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+```
+```
 plt.plot(hist_equalized, color='black')
 plt.title('Equalized Histogram')
-plt.xlim([0, 256])
-
-plt.tight_layout()
 plt.show()
 ```
-![image](https://github.com/user-attachments/assets/deaaaece-5923-4f20-b9d8-cffdb5d4ac51)
+![image](https://github.com/user-attachments/assets/bbc53bca-7cf1-42a4-b08d-dd723fad1e0b)
 
 
 ## Result: 
